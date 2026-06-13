@@ -10,14 +10,18 @@ loginForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   errorMessage.classList.add('hidden');
 
+  const emailValue = emailInput.value;
+  const passwordValue = passwordInput.value;
+
   const { data, error } = await supabase.auth.signInWithPassword({
-  email: emailInputValue,
-  password: passwordInputValue,
-})
+    email: emailValue,
+    password: passwordValue,
+  });
 
   if (error) {
     errorMessage.textContent = 'Błąd uwierzytelniania. Sprawdź wprowadzone dane.';
     errorMessage.classList.remove('hidden');
+    console.error('Supabase auth error:', error.message);
   } else {
     window.location.href = '../index.html'; 
   }
