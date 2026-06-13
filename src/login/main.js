@@ -11,9 +11,9 @@ loginForm.addEventListener('submit', async (e) => {
   errorMessage.classList.add('hidden');
 
   const { data, error } = await supabase.auth.signInWithPassword({
-    email: emailInput.value,
-    password: passwordInput.value,
-  });
+  email: emailInputValue,
+  password: passwordInputValue,
+})
 
   if (error) {
     errorMessage.textContent = 'Błąd uwierzytelniania. Sprawdź wprowadzone dane.';
