@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
@@ -9,58 +9,60 @@
 <body class="bg-slate-50 text-slate-900 min-h-screen flex flex-col antialiased">
 
   <header class="bg-white shadow-sm border-b border-slate-200 sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center gap-4">
+    <nav class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center gap-4">
       <h1 class="text-xl font-bold tracking-tight text-blue-600 md:text-2xl">Baza Artykułów</h1>
-      <nav class="flex gap-2">
+      <section class="flex gap-2">
         <button type="button" id="btn-add" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 cursor-pointer">
           Dodaj artykuł
         </button>
         <button type="button" id="btn-auth" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 cursor-pointer">
           Logowanie
         </button>
-      </nav>
-    </div>
+      </section>
+    </nav>
   </header>
 
   <main class="flex-grow max-w-7xl w-full mx-auto px-4 py-8">
     <section id="articles-container" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-full">
-      </section>
+    </section>
   </main>
 
-  <div id="article-modal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
-    <div class="bg-white rounded-xl max-w-lg w-full p-6 shadow-xl overflow-hidden transform transition-all max-h-[90vh] overflow-y-auto">
-      <h2 id="modal-title" class="text-xl font-bold mb-4 text-slate-800">Dodaj nowy artykuł</h2>
+  <aside id="article-modal" class="hidden fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 backdrop-blur-sm">
+    <article class="bg-white rounded-xl max-w-lg w-full p-6 shadow-xl overflow-hidden transform transition-all max-h-[90vh] overflow-y-auto">
+      <header>
+        <h2 id="modal-title" class="text-xl font-bold mb-4 text-slate-800">Dodaj nowy artykuł</h2>
+      </header>
       
       <form id="article-form" class="space-y-4">
         <input type="hidden" id="article-id" />
         
-        <div class="flex flex-col gap-1">
+        <section class="flex flex-col gap-1">
           <label for="input-title" class="text-sm font-semibold text-slate-700">Tytuł artykułu</label>
           <input type="text" id="input-title" placeholder="np. Wprowadzenie do baz danych" class="border border-slate-300 p-2.5 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-all" required />
-        </div>
+        </section>
 
-        <div class="flex flex-col gap-1">
+        <section class="flex flex-col gap-1">
           <label for="input-subtitle" class="text-sm font-semibold text-slate-700">Podtytuł</label>
           <input type="text" id="input-subtitle" placeholder="np. Podstawy SQL i NoSQL" class="border border-slate-300 p-2.5 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-all" required />
-        </div>
+        </section>
 
-        <div class="flex flex-col gap-1">
+        <section class="flex flex-col gap-1">
           <label for="input-author" class="text-sm font-semibold text-slate-700">Autor</label>
           <input type="text" id="input-author" placeholder="np. Jan Kowalski" class="border border-slate-300 p-2.5 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-all" required />
-        </div>
+        </section>
 
-        <div class="flex flex-col gap-1">
+        <section class="flex flex-col gap-1">
           <label for="input-content" class="text-sm font-semibold text-slate-700">Treść artykułu</label>
           <textarea id="input-content" rows="5" placeholder="Wpisz tutaj pełną treść artykułu..." class="border border-slate-300 p-2.5 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none text-sm transition-all resize-none" required></textarea>
-        </div>
+        </section>
 
-        <div class="flex justify-end gap-3 pt-2">
+        <footer class="flex justify-end gap-3 pt-2">
           <button type="button" id="btn-close-modal" class="bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 cursor-pointer">Anuluj</button>
           <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200 shadow-sm cursor-pointer">Zapisz</button>
-        </div>
+        </footer>
       </form>
-    </div>
-  </div>
+    </article>
+  </aside>
 
   <script type="module" src="./main.js"></script>
 </body>
